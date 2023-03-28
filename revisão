@@ -1,0 +1,27 @@
+import java.util.Scanner;
+public class Main
+{
+    public static String [] nomes = new String[3];
+	public static double [][] contas = new double[4][4];
+	
+	public static void main(String[] args) {
+	    int j;
+	    Scanner ler = new Scanner(System.in);
+	    
+	    for(j=0;j<3;j++){
+	        System.out.println("Digite o " + (j+1) + "  nome:");
+	        nomes[j] = ler.nextLine();
+	    }
+	    primeiraFunc();
+	}
+	
+	public static void primeiraFunc(){
+	    int i;
+	    for(i=0;i<3;i++){
+	        System.out.println(" " + nomes[i]);
+	    } 
+	}
+	
+	
+	
+}
