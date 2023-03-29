@@ -1,27 +1,89 @@
 import java.util.Scanner;
-public class Main
-{
+
+public class Main{
     public static String [] nomes = new String[3];
 	public static double [][] contas = new double[4][4];
 	
 	public static void main(String[] args) {
 	    int j;
+	    int i;
+	    int opcao;
+	    double valor1 = 0f; 
+	    double valor2 = 0f;
+	    double valor3 = 0f;
+	    
 	    Scanner ler = new Scanner(System.in);
 	    
 	    for(j=0;j<3;j++){
-	        System.out.println("Digite o " + (j+1) + "  nome:");
+	        System.out.println("Digite o " + (j+1) + " nome:");
 	        nomes[j] = ler.nextLine();
 	    }
 	    primeiraFunc();
+	    
+	    for(i=0;i<4;i++){
+	        System.out.println("Digite um número inteiro:");
+	        opcao = ler.nextInt();
+	        exibeNomes(opcao);
+	    }
+	  
+	    
+        
+        lerMatriz(Contas);
+        
+        
+	    
 	}
 	
 	public static void primeiraFunc(){
 	    int i;
 	    for(i=0;i<3;i++){
 	        System.out.println(" " + nomes[i]);
-	    } 
+	    }
 	}
 	
+	public static void exibeNomes(int opcao){
+	    if (opcao == 1){
+	       System.out.println(" " + nomes[0]);
+	    }
+	    else if(opcao>1 && opcao<11){
+	        System.out.println(" " + nomes[1]);
+	    }
+	    else if (opcao>10){
+	        System.out.println(" " + nomes[2]);
+	    }
+	    else {
+	        System.out.println("Opção inválida");
+	    }
 	
-	
+
+    }
+    
+    public static void lerMatriz(double[][] Contas) {
+           
+            for(int i=0;i<4;i++) {
+                for (int j=0;j<4;j++) {
+
+                    if(i == 0 && j == 0){
+                        Contas[i][j] = 0;
+                        System.out.println(Contas[i][j]);
+                    }    
+                    else if(i == 0){
+                        System.out.println("Digite o " + j + "º valor:");
+                        Contas[i][j] = ler.nextDouble();
+                    }
+                    else if(j == 0){
+                        Contas[i][j] = Contas[j][i];
+                    }
+                    else if(i == j){
+                        Contas[i][j] = Contas[0][j] * Contas[i][0];
+                    }
+                    else{
+                        Contas[i][j] = Contas[0][j] - Contas[i][j];
+                    }
+              
+                    System.out.print(Contas [i][j] + " ");
+                }
+            }
+            System.out.println();
+    }
 }
