@@ -1,0 +1,27 @@
+public class Caneta {
+
+    public String cor;
+    public String tipo;
+    public float  ponta;
+
+    public Caneta(String cor,String tipo, float ponta){
+       this.cor = cor;
+       this.tipo = tipo;
+       this.ponta = ponta;
+    }
+
+    public void apresentar(){
+        System.out.println("A cor é: " + this.cor + " a ponta é: " + this.ponta + " o tipo é: " + this.tipo);
+    }
+
+}
+
+public class main {
+
+
+    public static void main(String[] args) {
+        Caneta caneta1 = new Caneta("azul", "bic");
+        caneta1.apresentar();
+    }
+
+}
