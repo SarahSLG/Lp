@@ -1,0 +1,28 @@
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+         int D = 0;
+         int E = 0;
+         int F = 0;
+         int C = 0;
+
+         Scanner ler = new Scanner(System.in);
+        System.out.println("Entre com as idades:");
+        D = ler.nextInt();
+        E = ler.nextInt();
+        F = ler.nextInt();
+
+
+         if((D>=5 && D<=100) && (E>=5 && E<=100) && (F>=5 && F<=100)){
+             if(D>=F && D<=E || D>=E && D<=F){
+                 C = D;
+             }else if((E>=F && E<=D) || (E>=D && E<=F)){
+                 C = E;
+             }else if ((F>=E && F<=D) || (F>=D && F<=E)) {
+                 C = F;
+             }
+         }else System.out.println("Inválido");
+        System.out.println(C);
+
+         }
+    }
