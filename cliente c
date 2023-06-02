@@ -1,0 +1,60 @@
+import java.util.List;
+import java.util.ArrayList;
+
+public class Cliente {
+    private List <Carrinhodecompras> Carrinhodecompras;
+
+    String nome;
+    int idade;
+
+    public Cliente(String nome, int idade){
+        Carrinhodecompras = new ArrayList<>();
+        this.nome = nome;
+        this.idade = idade;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public int getIdade() {
+        return idade;
+    }
+
+    public void setIdade(int idade) {
+        this.idade = idade;
+    }
+
+    public List<Carrinhodecompras> getCarrinhodecompras() {
+        return Carrinhodecompras;
+    }
+
+    public void setCarrinhodecompras(Carrinhodecompras carrinhodecompras) {
+        this.Carrinhodecompras = (List<Carrinhodecompras>) carrinhodecompras;
+    }
+
+    public void criarcarrinho(Carrinhodecompras carrinhodecompras){
+        Carrinhodecompras.add(new Carrinhodecompras());
+    }
+
+    public void Adproduto(int numcarrinho, Produto produto){
+        if(numcarrinho == 0){
+            Carrinhodecompras.add(new Carrinhodecompras());
+            Carrinhodecompras.get(numcarrinho).adicionarItem(produto);
+        }
+        else if(numcarrinho == 1){
+            Carrinhodecompras.get(numcarrinho).adicionarItem(produto);
+        }
+    }
+
+
+    public void Remproduto(int numcarrinho, Produto produto){
+        Carrinhodecompras.get(numcarrinho).removerItem(produto);
+    }
+
+
+}
