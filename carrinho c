@@ -1,0 +1,41 @@
+import java.util.ArrayList;
+import java.util.List;
+class Carrinhodecompras {
+    private List<Produto> itens;
+
+    public Carrinhodecompras() {
+        this.itens = new ArrayList<>();
+    }
+
+    public void adicionarItem(Produto produto) {
+        itens.add(produto);
+    }
+
+    public void removerItem(Produto produto) {
+        itens.remove(produto);
+    }
+
+    public double calcularTotal() {
+        double total = 0;
+        for (Produto produto : itens) {
+            total += produto.getPreco();
+        }
+        return total;
+    }
+
+    public double calcularTotal(int a) {
+        double total = 0;
+        for (int i = 0; i<itens.size(); i++) {
+            Produto produto = itens.get(i);
+            total += produto.getPreco();
+        }
+        return total;
+    }
+
+    public void imprimirItens() {
+        System.out.println("Itens no carrinho:");
+        for (Produto produto : itens) {
+            System.out.println(produto.getNome() + " - R$" + produto.getPreco());
+        }
+    }
+}
