@@ -1,0 +1,27 @@
+public class Main {
+    public static void main(String[] args) {
+        Carrinho carrinho = new Carrinho();
+
+        Produto p1 = new Produto("Camiseta", 29.99);
+        Produto p2 = new Produto("Calça jeans", 79.99);
+        Produto p3 = new Produto("Tênis", 99.99);
+        System.out.println("Voce é otario");
+        System.out.println("Vai se ferrrar julio");
+        carrinho.adicionarItem(p1);
+        carrinho.adicionarItem(p2);
+        carrinho.adicionarItem(p3);
+
+        carrinho.imprimirItens();
+
+       double total = carrinho.calcularTotal(true);
+        System.out.println("Total: R$" + total);
+
+        carrinho.removerItem(p2);
+
+        carrinho.imprimirItens();
+
+        total = carrinho.calcularTotal(1);
+        System.out.println("Total: R$" + total);
+
+    }
+}
